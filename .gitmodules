@@ -1,0 +1,4 @@
+[submodule "geoserver-geonode-ext"]
+	path = geoserver-geonode-ext
+	url = https://github.com/MapStory/geoserver-geonode-ext.git
+	branch = geoserver-2.11
