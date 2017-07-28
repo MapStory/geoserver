@@ -15,7 +15,10 @@ done
 if [ ! -z "${PUBLIC_HOST##*[!0-9\.]*}" ]; then
     # IP address
     export SESSION_COOKIE_DOMAIN=$PUBLIC_HOST
-elif [ -z "${PUBLIC_HOST##[a-zA-z]*\.[a-zA-z]*}" ]; then
+elif [ -z "${PUBLIC_HOST##[a-zA-Z]*\.[a-zA-Z]*\.[a-zA-Z]*}" ]; then
+    # sub domain
+    export SESSION_COOKIE_DOMAIN=$PUBLIC_HOST
+elif [ -z "${PUBLIC_HOST##[a-zA-Z]*\.[a-zA-Z]*}" ]; then
     # Domain name
     export SESSION_COOKIE_DOMAIN=.$PUBLIC_HOST
 else
