@@ -7,6 +7,9 @@ WORKDIR /geoserver-geonode-ext
 RUN mvn dependency:go-offline
 RUN mvn install -P boundless -DskipTests -Dmaven.gitcommitid.skip=true
 
+# Remove any geofence configuration
+RUN rm -rf target/geoserver/data/security/auth/geofence
+
 
 FROM tomcat:9-jre8 AS runner
 

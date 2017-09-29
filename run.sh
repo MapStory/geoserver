@@ -30,6 +30,9 @@ export GEOSERVER_PROXY_URL=${PUBLIC_PROTOCOL}://${PUBLIC_HOST}/geoserver/
 # If the data directory doesn't exist, copy the one embedded in the WAR.
 [ ! -e $GEOSERVER_DATA_DIR/global.xml ] && cp -r $WEBAPPS_DIR/geoserver/data/* /var/lib/geoserver/data/
 
+# Remove any geofence configuration
+rm -rf $GEOSERVER_DATA_DIR/security/auth/geofence
+
 # Remove the data directory embedded in the WAR.
 rm -rf $WEBAPPS_DIR/geoserver/data
 
