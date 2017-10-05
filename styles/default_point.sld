@@ -1,79 +1,28 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<StyledLayerDescriptor version="1.0.0" 
-                       xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
-                       xmlns="http://www.opengis.net/sld" 
-                       xmlns:ogc="http://www.opengis.net/ogc" 
-                       xmlns:xlink="http://www.w3.org/1999/xlink" 
-                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <NamedLayer>
-    <Name>generic</Name>
-    <UserStyle>
-      <Title>Generic</Title>
-      <Abstract>Generic style</Abstract>
-      <FeatureTypeStyle>
-        <Rule>
-          <Name>Polygon</Name>
-          <Title>Polygon</Title>
-          <ogc:Filter>
-            <ogc:PropertyIsEqualTo>
-              <ogc:Function name="dimension">
-                <ogc:Function name="geometry"/>
-              </ogc:Function>
-              <ogc:Literal>2</ogc:Literal>
-            </ogc:PropertyIsEqualTo>
-          </ogc:Filter>
-          <PolygonSymbolizer>
-            <Fill>
-              <CssParameter name="fill">#f59620</CssParameter>
-              <CssParameter name="fill-opacity">.5</CssParameter>
-            </Fill>
-            <Stroke>     
-              <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-opacity">.8</CssParameter>
-            </Stroke>
-          </PolygonSymbolizer>
-        </Rule>
-        <Rule>
-          <Name>Line</Name>
-          <Title>Line</Title>
-          <ogc:Filter>
-            <ogc:PropertyIsEqualTo>
-              <ogc:Function name="dimension">
-                <ogc:Function name="geometry"/>
-              </ogc:Function>
-              <ogc:Literal>1</ogc:Literal>
-            </ogc:PropertyIsEqualTo>
-          </ogc:Filter>
-          <LineSymbolizer>
-            <Stroke>
-              <CssParameter name="stroke">#000000</CssParameter>
-              <CssParameter name="stroke-opacity">.8</CssParameter>
-            </Stroke>
-          </LineSymbolizer>
-        </Rule>
-        <Rule>
-          <Name>point</Name>
-          <Title>Point</Title>
-          <ElseFilter/>
-          <PointSymbolizer>
-            <Graphic>
-              <Mark>
-                <WellKnownName>circle</WellKnownName>
-                <Fill>
-                  <CssParameter name="fill">#f59620</CssParameter>
-                  <CssParameter name="fill-opacity">.5</CssParameter>
-                </Fill>
-                <Stroke>
-                  <CssParameter name="stroke">#000000</CssParameter>
-                  <CssParameter name="stroke-opacity">.8</CssParameter>
-                </Stroke>
-              </Mark>
-              <Size>10</Size>
-            </Graphic>
-          </PointSymbolizer>
-        </Rule>
-        <VendorOption name="ruleEvaluation">first</VendorOption>
-      </FeatureTypeStyle>
-    </UserStyle>
-  </NamedLayer>
-</StyledLayerDescriptor>
+<?xml version="1.0" encoding="UTF-8"?>
+<sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" version="1.0.0">
+  <sld:NamedLayer>
+    <sld:Name>point</sld:Name>
+    <sld:UserStyle>
+      <sld:Name>point</sld:Name>
+      <sld:FeatureTypeStyle>
+        <sld:Name>name</sld:Name>
+        <sld:Rule>
+          <sld:PointSymbolizer>
+            <sld:Graphic>
+              <sld:Mark>
+                <sld:WellKnownName>circle</sld:WellKnownName>
+                <sld:Fill>
+                  <sld:CssParameter name="fill">#f59620</sld:CssParameter>
+                  <sld:CssParameter name="fill-opacity">0.7</sld:CssParameter>
+                </sld:Fill>
+                <sld:Stroke/>
+              </sld:Mark>
+              <sld:Opacity>0.7</sld:Opacity>
+              <sld:Size>10</sld:Size>
+            </sld:Graphic>
+          </sld:PointSymbolizer>
+        </sld:Rule>
+      </sld:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+</sld:StyledLayerDescriptor>
