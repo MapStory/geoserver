@@ -1,4 +1,4 @@
-FROM maven:3.5-jdk-8-alpine as builder
+FROM maven:3.5-jdk-8-alpine AS builder
 MAINTAINER Tyler Battle <tbattle@boundlessgeo.com>
 
 COPY m2 /root/.m2

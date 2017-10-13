@@ -11,20 +11,7 @@ for secret in /run/secrets/env_*; do
     set +a
 done
 
-# Domains get prepended with a '.' to apply to subdomains.
-if [ ! -z "${PUBLIC_HOST##*[!0-9\.]*}" ]; then
-    # IP address
-    export SESSION_COOKIE_DOMAIN=$PUBLIC_HOST
-elif [ -z "${PUBLIC_HOST##[a-zA-Z]*\.[a-zA-Z]*\.[a-zA-Z]*}" ]; then
-    # sub domain
-    export SESSION_COOKIE_DOMAIN=$PUBLIC_HOST
-elif [ -z "${PUBLIC_HOST##[a-zA-Z]*\.[a-zA-Z]*}" ]; then
-    # Domain name
-    export SESSION_COOKIE_DOMAIN=.$PUBLIC_HOST
-else
-    # Top level domain name
-    export SESSION_COOKIE_DOMAIN=$PUBLIC_HOST
-fi
+export SESSION_COOKIE_DOMAIN=$PUBLIC_HOST
 export GEOSERVER_PROXY_URL=${PUBLIC_PROTOCOL}://${PUBLIC_HOST}/geoserver/
 
 # If the data directory doesn't exist, copy the one embedded in the WAR.
