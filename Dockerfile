@@ -1,5 +1,5 @@
 FROM maven:3.5-jdk-8-alpine AS builder
-MAINTAINER Tyler Battle <tbattle@boundlessgeo.com>
+LABEL maintainer="Tyler Battle <tbattle@boundlessgeo.com>"
 
 # COPY m2 /root/.m2
 COPY geoserver-geonode-ext /geoserver-geonode-ext
