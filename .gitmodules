@@ -2,3 +2,7 @@
 	path = geoserver-geonode-ext
 	url = https://github.com/MapStory/geoserver-geonode-ext.git
 	branch = geoserver-2.11
+[submodule "ms-gs-plugins"]
+	path = ms-gs-plugins
+	url = https://github.com/MapStory/ms-gs-plugins.git
+	branch = master

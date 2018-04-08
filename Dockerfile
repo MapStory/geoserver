@@ -7,6 +7,13 @@ WORKDIR /geoserver-geonode-ext
 RUN mvn dependency:go-offline
 RUN mvn install -P boundless -DskipTests -Dmaven.gitcommitid.skip=true
 
+COPY ms-gs-plugins /ms-gs-plugins
+WORKDIR /ms-gs-plugins
+RUN mvn dependency:go-offline
+RUN set -ex \
+    && mvn install -DskipTests -Dmaven.gitcommitid.skip=true \
+    && cp target/*.jar /geoserver-geonode-ext/target/geoserver/WEB-INF/lib/
+
 # Remove any geofence configuration
 RUN rm -rf target/geoserver/data/security/auth/geofence
 
