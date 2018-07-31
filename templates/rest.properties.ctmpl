@@ -1,5 +1,3 @@
-/rest/process/batchdownload/download/*;GET=IS_AUTHENTICATED_ANONYMOUSLY
-
 # the following are allowed so that clients have a way to find out if a particular layer is
 # backed by geogig. Ideally, we would like the getCapabilities request include a metadata
 # specifying the geogig endpoint corresponding to a layer so that we don't need the rest endpoint.
@@ -9,9 +7,14 @@
 # allow anyone to edit its data anonymously or logged in. making sure the needed rest endpoints are
 # accessible by ROLE_ANONYMOUS will allow such layer. otherwise, they would still be asked to
 # authenticate on a remote for which they do not have any credentials.
+/rest/process/batchdownload/download/*;GET=IS_AUTHENTICATED_ANONYMOUSLY
 /rest/layers/*;GET=ROLE_ANONYMOUS,IS_AUTHENTICATED_ANONYMOUSLY
 /rest/workspaces/*/datastores/*;GET=ROLE_ANONYMOUS,IS_AUTHENTICATED_ANONYMOUSLY
 /rest/workspaces/*/datastores/*/featuretypes/*;GET=ROLE_ANONYMOUS,IS_AUTHENTICATED_ANONYMOUSLY
+/rest/monitor/*;GET=ROLE_ADMINISTRATOR
+/rest/security/*;GET,POST,DELETE,PUT=ROLE_ADMINISTRATOR
+/rest/br/*;GET,POST,DELETE,PUT=ROLE_ADMINISTRATOR
+/geofence/rest/*;GET,POST,DELETE,PUT=ROLE_ADMINISTRATOR
 
 /geogig/*/repo/manifest;GET=IS_AUTHENTICATED_ANONYMOUSLY
 /geogig/*/repo/**;GET,POST,DELETE,PUT=ROLE_ADMINISTRATOR

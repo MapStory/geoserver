@@ -5,9 +5,7 @@
     <charset>UTF-8</charset>
     <numDecimals>8</numDecimals>
     <onlineResource>http://geoserver.org</onlineResource>
-    <!--
     <proxyBaseUrl>{{ env "GEOSERVER_PROXY_URL" }}</proxyBaseUrl>
-    -->
     <verbose>false</verbose>
     <verboseExceptions>false</verboseExceptions>
     <localWorkspaceIncludesPrefix>false</localWorkspaceIncludesPrefix>

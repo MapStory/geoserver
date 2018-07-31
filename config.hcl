@@ -11,14 +11,38 @@ template {
 }
 
 template {
+  source = "templates/geofence_config.xml.ctmpl"
+  destination = "{{ env "GEOSERVER_DATA_DIR" }}/security/auth/geofence/config.xml"
+  perms = 0644
+}
+
+template {
+  source = "templates/geofence.properties.ctmpl"
+  destination = "{{ env "GEOSERVER_DATA_DIR" }}/geofence/geofence.properties"
+  perms = 0644
+}
+
+template {
+  source = "templates/geofence-server.properties.ctmpl"
+  destination = "{{ env "GEOSERVER_DATA_DIR" }}/geofence/geofence-server.properties"
+  perms = 0644
+}
+
+template {
   source = "templates/geogigconfig.ctmpl"
   destination = "/usr/share/tomcat/.geogigconfig"
   perms = 0644
 }
 
 template {
-  source = "templates/geonodeAuthProvider_config.xml.ctmpl"
-  destination = "{{ env "GEOSERVER_DATA_DIR" }}/security/auth/geonodeAuthProvider/config.xml"
+  source = "templates/geonode-oauth2_config.xml.ctmpl"
+  destination = "{{ env "GEOSERVER_DATA_DIR" }}/security/filter/geonode-oauth2/config.xml"
+  perms = 0644
+}
+
+template {
+  source = "templates/geonodeRESTRoleService_config.xml.ctmpl"
+  destination = "{{ env "GEOSERVER_DATA_DIR" }}/security/role/geonode REST role service/config.xml"
   perms = 0644
 }
 

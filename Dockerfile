@@ -3,19 +3,16 @@ LABEL maintainer="Tyler Battle <tbattle@boundlessgeo.com>"
 
 # COPY m2 /root/.m2
 COPY geoserver-geonode-ext /geoserver-geonode-ext
-WORKDIR /geoserver-geonode-ext
+WORKDIR /geoserver-geonode-ext/geoserver
 RUN mvn dependency:go-offline
-RUN mvn install -P boundless -DskipTests -Dmaven.gitcommitid.skip=true
+RUN mvn install -DskipTests -Dmaven.gitcommitid.skip=true
 
 COPY ms-gs-plugins /ms-gs-plugins
 WORKDIR /ms-gs-plugins
 RUN mvn dependency:go-offline
 RUN set -ex \
     && mvn install -DskipTests -Dmaven.gitcommitid.skip=true \
-    && cp target/*.jar /geoserver-geonode-ext/target/geoserver/WEB-INF/lib/
-
-# Remove any geofence configuration
-RUN rm -rf target/geoserver/data/security/auth/geofence
+    && cp target/*.jar /geoserver-geonode-ext/geoserver/web-app/target/geoserver/WEB-INF/lib/
 
 
 FROM tomcat:9-jre8 AS runner
@@ -53,7 +50,7 @@ RUN set -ex \
     && rm -rf /var/lib/apt/lists/*
 
 # Install GeoServer WAR
-COPY --from=builder /geoserver-geonode-ext/target/geoserver $WEBAPPS_DIR/geoserver
+COPY --from=builder /geoserver-geonode-ext/geoserver/web-app/target/geoserver $WEBAPPS_DIR/geoserver
 
 RUN mkdir /tmp/mapstory && mkdir /tmp/mapstory/geoserver
 

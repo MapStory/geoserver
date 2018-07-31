@@ -12,13 +12,11 @@ for secret in /run/secrets/env_*; do
 done
 
 export SESSION_COOKIE_DOMAIN=$PUBLIC_HOST
-export GEOSERVER_PROXY_URL=${PUBLIC_PROTOCOL}://${PUBLIC_HOST}/geoserver/
+export PUBLIC_URL=${PUBLIC_PROTOCOL}://${PUBLIC_HOST}
+export GEOSERVER_PROXY_URL=${PUBLIC_URL}/geoserver/
 
 # If the data directory doesn't exist, copy the one embedded in the WAR.
 [ ! -e $GEOSERVER_DATA_DIR/global.xml ] && cp -r $WEBAPPS_DIR/geoserver/data/* /var/lib/geoserver/data/
-
-# Remove any geofence configuration
-rm -rf $GEOSERVER_DATA_DIR/security/auth/geofence
 
 # Remove the data directory embedded in the WAR.
 rm -rf $WEBAPPS_DIR/geoserver/data
@@ -26,6 +24,9 @@ rm -rf $WEBAPPS_DIR/geoserver/data
 # Copy in the defaults styles.
 mkdir -p $GEOSERVER_DATA_DIR/styles
 cp /tmp/styles/* $GEOSERVER_DATA_DIR/styles/
+
+touch $GEOSERVER_DATA_DIR/geofence/geofence-datasource-ovr.properties
+touch $GEOSERVER_DATA_DIR/geofence/geofence.properties
 
 cd /opt
 # Resolve the template for the config file so that paths are correct

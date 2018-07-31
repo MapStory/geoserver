@@ -1,0 +1,2 @@
+gwc.context.suffix=gwc
+org.geoserver.rest.DefaultUserGroupServiceName=geonode REST role service
