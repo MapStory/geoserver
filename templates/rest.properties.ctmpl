@@ -7,6 +7,8 @@
 # allow anyone to edit its data anonymously or logged in. making sure the needed rest endpoints are
 # accessible by ROLE_ANONYMOUS will allow such layer. otherwise, they would still be asked to
 # authenticate on a remote for which they do not have any credentials.
+/rest/styles*;GET,POST,DELETE,PUT=IS_AUTHENTICATED_ANONYMOUSLY
+/rest/styles/*;GET,POST,DELETE,PUT=IS_AUTHENTICATED_ANONYMOUSLY
 /rest/process/batchdownload/download/*;GET=IS_AUTHENTICATED_ANONYMOUSLY
 /rest/layers/*;GET=ROLE_ANONYMOUS,IS_AUTHENTICATED_ANONYMOUSLY
 /rest/workspaces/*/datastores/*;GET=ROLE_ANONYMOUS,IS_AUTHENTICATED_ANONYMOUSLY
