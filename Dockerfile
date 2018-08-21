@@ -55,6 +55,7 @@ COPY --from=builder /geoserver-geonode-ext/geoserver/web-app/target/geoserver $W
 RUN mkdir /tmp/mapstory && mkdir /tmp/mapstory/geoserver
 
 COPY styles/ /tmp/styles
+COPY workspaces/ /tmp/workspaces
 COPY config.hcl /opt/
 COPY templates/ /opt/templates
 

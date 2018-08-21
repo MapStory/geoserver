@@ -21,9 +21,13 @@ export GEOSERVER_PROXY_URL=${PUBLIC_URL}/geoserver/
 # Remove the data directory embedded in the WAR.
 rm -rf $WEBAPPS_DIR/geoserver/data
 
-# Copy in the defaults styles.
+# Copy in the default styles.
 mkdir -p $GEOSERVER_DATA_DIR/styles
 cp /tmp/styles/* $GEOSERVER_DATA_DIR/styles/
+
+# Copy in the geonode workspace.
+mkdir -p $GEOSERVER_DATA_DIR/workspaces
+cp -R /tmp/workspaces/* $GEOSERVER_DATA_DIR/workspaces/
 
 touch $GEOSERVER_DATA_DIR/geofence/geofence-datasource-ovr.properties
 touch $GEOSERVER_DATA_DIR/geofence/geofence.properties

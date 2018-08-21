@@ -75,3 +75,9 @@ template {
   destination = "{{ env "WEBAPPS_DIR" }}/geoserver/WEB-INF/web.xml"
   perms = 0644
 }
+
+template {
+  source = "templates/workspaces_geonode_settings.xml.ctmpl"
+  destination = "{{ env "GEOSERVER_DATA_DIR" }}/workspaces/geonode/settings.xml"
+  perms = 0644
+}
