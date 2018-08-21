@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sld:StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" version="1.0.0">
-  <sld:NamedLayer>
-    <sld:Name>point</sld:Name>
-    <sld:UserStyle>
-      <sld:Name>point</sld:Name>
-      <sld:FeatureTypeStyle>
-        <sld:Name>name</sld:Name>
-        <sld:Rule>
-          <sld:PointSymbolizer>
-            <sld:Graphic>
-              <sld:Mark>
-                <sld:WellKnownName>circle</sld:WellKnownName>
-                <sld:Fill>
-                  <sld:CssParameter name="fill">#f59620</sld:CssParameter>
-                  <sld:CssParameter name="fill-opacity">0.7</sld:CssParameter>
-                </sld:Fill>
-                <sld:Stroke/>
-              </sld:Mark>
-              <sld:Opacity>0.7</sld:Opacity>
-              <sld:Size>10</sld:Size>
-            </sld:Graphic>
-          </sld:PointSymbolizer>
-        </sld:Rule>
-      </sld:FeatureTypeStyle>
-    </sld:UserStyle>
-  </sld:NamedLayer>
-</sld:StyledLayerDescriptor>
+<StyledLayerDescriptor version="1.1.0"
+ xmlns="http://www.opengis.net/sld"
+ xmlns:ogc="http://www.opengis.net/ogc"
+ xmlns:se="http://www.opengis.net/se"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd"
+>
+  <NamedLayer>
+    <se:Name>Points</se:Name>
+    <UserStyle>
+      <se:Name>Points</se:Name>
+      <se:FeatureTypeStyle>
+        <se:Rule>
+          <se:Name>Single symbol</se:Name>
+          <se:PointSymbolizer>
+            <se:Graphic>
+              <se:Mark>
+                <se:WellKnownName>hexagon</se:WellKnownName>
+                <se:Fill>
+                  <se:SvgParameter name="fill">#f4970f</se:SvgParameter>
+                </se:Fill>
+                <se:Stroke>
+                  <se:SvgParameter name="stroke">#8f8f8f</se:SvgParameter>
+                  <se:SvgParameter name="stroke-width">2</se:SvgParameter>
+                </se:Stroke>
+              </se:Mark>
+              <se:Size>13</se:Size>
+            </se:Graphic>
+          </se:PointSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>

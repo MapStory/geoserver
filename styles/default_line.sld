@@ -1,32 +1,37 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<StyledLayerDescriptor version="1.0.0" 
- xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
- xmlns="http://www.opengis.net/sld" 
- xmlns:ogc="http://www.opengis.net/ogc" 
- xmlns:xlink="http://www.w3.org/1999/xlink" 
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <!-- a Named Layer is the basic building block of an SLD document -->
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.1.0"
+ xmlns="http://www.opengis.net/sld"
+ xmlns:ogc="http://www.opengis.net/ogc"
+ xmlns:se="http://www.opengis.net/se"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd"
+>
   <NamedLayer>
-    <Name>default_line</Name>
+    <se:Name>Lines</se:Name>
     <UserStyle>
-    <!-- Styles can have names, titles and abstracts -->
-      <Title>Default Line</Title>
-      <Abstract>A sample style that draws a line</Abstract>
-      <!-- FeatureTypeStyles describe how to render different features -->
-      <!-- A FeatureTypeStyle for rendering lines -->
-      <FeatureTypeStyle>
-        <Rule>
-          <Name>rule1</Name>
-          <Title>Orange Line</Title>
-          <Abstract>A solid orange line with a 1 pixel width</Abstract>
-          <LineSymbolizer>
-            <Stroke>
-              <CssParameter name="stroke">#f59620</CssParameter>
-            </Stroke>
-          </LineSymbolizer>
-        </Rule>
-      </FeatureTypeStyle>
+      <se:Name>Lines</se:Name>
+      <se:FeatureTypeStyle>
+        <se:Rule>
+          <se:Name>Single symbol</se:Name>
+          <se:LineSymbolizer>
+            <se:Stroke>
+              <se:SvgParameter name="stroke">#8f8f8f</se:SvgParameter>
+              <se:SvgParameter name="stroke-width">4</se:SvgParameter>
+              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
+              <se:SvgParameter name="stroke-linecap">square</se:SvgParameter>
+            </se:Stroke>
+          </se:LineSymbolizer>
+          <se:LineSymbolizer>
+            <se:Stroke>
+              <se:SvgParameter name="stroke">#f4970f</se:SvgParameter>
+              <se:SvgParameter name="stroke-width">2</se:SvgParameter>
+              <se:SvgParameter name="stroke-linejoin">round</se:SvgParameter>
+              <se:SvgParameter name="stroke-linecap">square</se:SvgParameter>
+            </se:Stroke>
+          </se:LineSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
     </UserStyle>
   </NamedLayer>
 </StyledLayerDescriptor>
-
