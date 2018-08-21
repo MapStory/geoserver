@@ -42,7 +42,7 @@ template {
 
 template {
   source = "templates/geonodeRESTRoleService_config.xml.ctmpl"
-  destination = "{{ env "GEOSERVER_DATA_DIR" }}/security/role/geonode REST role service/config.xml"
+  destination = "{{ env "GEOSERVER_DATA_DIR" }}/security/role/geonode-oauth2/config.xml"
   perms = 0644
 }
 

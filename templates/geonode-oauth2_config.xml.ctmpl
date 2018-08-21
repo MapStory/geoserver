@@ -4,7 +4,7 @@
   <className>org.geoserver.security.oauth2.GeoNodeOAuthAuthenticationFilter</className>
   <roleSource class="org.geoserver.security.config.PreAuthenticatedUserNameFilterConfig$PreAuthenticatedUserNameRoleSource">RoleService</roleSource>
   <userGroupServiceName>default</userGroupServiceName>
-  <roleServiceName>geonode REST role service</roleServiceName>
+  <roleServiceName>geonode-oauth2</roleServiceName>
   <cliendId>{{ env "OAUTH_CLIENT_ID" }}</cliendId>
   <clientSecret>{{ env "OAUTH_CLIENT_SECRET" }}</clientSecret>
 
