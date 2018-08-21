@@ -32,8 +32,17 @@ cp -R /tmp/workspaces/* $GEOSERVER_DATA_DIR/workspaces/
 touch $GEOSERVER_DATA_DIR/geofence/geofence-datasource-ovr.properties
 touch $GEOSERVER_DATA_DIR/geofence/geofence.properties
 
+# Process params
+PARAMS=""
+for i do # loop over $@
+    if [ "$i" = "--shell" ]; then
+        # Override the exec config and run a shell
+        PARAMS="$PARAMS --exec /bin/bash"
+    fi
+done
+
 cd /opt
 # Resolve the template for the config file so that paths are correct
 ./consul-template -template "config.hcl:config-new.hcl" -once
 # Resolve the rest of the templates and run tomcat
-./consul-template -config config-new.hcl -once
+./consul-template -config config-new.hcl -once $PARAMS

@@ -64,6 +64,6 @@ COPY run.sh /opt/
 #RUN mkdir -p $GEOSERVER_DATA_DIR && chown tomcat:tomcat $GEOSERVER_DATA_DIR
 RUN mkdir -p $GEOSERVER_DATA_DIR
 ENV GEOSERVER_ENABLE_GZIP true
-CMD ["/opt/run.sh"]
+ENTRYPOINT ["/opt/run.sh"]
 
 #TODO: SECURITY don't run as root
