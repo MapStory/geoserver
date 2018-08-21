@@ -1,2 +1,3 @@
+# generated at deployment runtime
 gwc.context.suffix=gwc
 org.geoserver.rest.DefaultUserGroupServiceName=geonode-oauth2

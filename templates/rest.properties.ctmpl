@@ -1,3 +1,5 @@
+# generated at deployment runtime
+
 # the following are allowed so that clients have a way to find out if a particular layer is
 # backed by geogig. Ideally, we would like the getCapabilities request include a metadata
 # specifying the geogig endpoint corresponding to a layer so that we don't need the rest endpoint.

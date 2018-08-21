@@ -1,3 +1,4 @@
+<!-- generated at deployment runtime -->
 <Context path="/geoserver"
     antiResourceLocking="false" >
   <Parameter name="org.geonode.security.databaseSecurityClient.url"

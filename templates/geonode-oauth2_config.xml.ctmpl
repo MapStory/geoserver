@@ -1,3 +1,4 @@
+<!-- generated at deployment runtime -->
 <geoNodeOauth2Authentication>
   <id>-313f4319:15766e137c9:-8000</id>
   <name>geonode-oauth2</name>

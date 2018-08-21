@@ -1,3 +1,4 @@
+<!-- generated at deployment runtime -->
 <security>
   <roleServiceName>default</roleServiceName>
   <authProviderNames>

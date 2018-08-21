@@ -1,3 +1,5 @@
+# generated at deployment runtime
+
 ### GeoFence Module configuration file
 ###
 ### GeoServer will read this file at boot time.

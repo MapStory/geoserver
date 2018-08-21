@@ -1,3 +1,4 @@
+<!-- generated at deployment runtime -->
 <org.geonode.security.GeoNodeAuthProviderConfig>
   <id>-54fbcd7b:1402c24f6bc:-7fe9</id>
   <name>geonodeAuthProvider</name>
