@@ -2,7 +2,11 @@
 <global>
   <settings>
     <id>SettingsInfoImpl-2edad420:155c534d13f:-8000</id>
-    <contact/>
+    <contact>
+      <contactOrganization>{{ or (env "GEOSERVER_CONTACT_ORG") "MapStory" }}</contactOrganization>
+      <contactPerson>{{ or (env "GEOSERVER_CONTACT_PERSON") "MapStory" }}</contactPerson>
+      <contactEmail>{{ or (env "GEOSERVER_CONTACT_EMAIL") "info@mapstory.org" }}</contactEmail>
+    </contact>
     <charset>UTF-8</charset>
     <numDecimals>8</numDecimals>
     <onlineResource>http://geoserver.org</onlineResource>
