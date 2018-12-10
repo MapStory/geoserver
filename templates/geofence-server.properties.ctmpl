@@ -12,7 +12,7 @@ servicesUrl=internal:/
 allowRemoteAndInlineLayers=true
 allowDynamicStyles=true
 grantWriteToWorkspacesToAuthenticatedUsers=true
-useRolesToFilter=false
+useRolesToFilter=true
 acceptedRoles=
 
 

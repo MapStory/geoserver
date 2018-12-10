@@ -1,6 +1,6 @@
 <!-- generated at deployment runtime -->
 <security>
-  <roleServiceName>default</roleServiceName>
+  <roleServiceName>geonode-oauth2</roleServiceName>
   <authProviderNames>
     <string>default</string>
     <string>geofence</string>
