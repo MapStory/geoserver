@@ -29,7 +29,10 @@ RUN set -ex \
     && rm -rf /var/lib/apt/lists/*
 
 # Add CA cert for self signing
-COPY ca.crt /usr/local/share/ca-certificates/
+COPY cacerts/ca.crt /usr/local/share/ca-certificates/
+COPY cacerts/Certificates_v5.3_DoD.pem.crt /usr/local/share/ca-certificates/
+COPY cacerts/comodorsacertificationauthority.crt /usr/local/share/ca-certificates/
+COPY cacerts/comodorsadomainvalidationsecureserverca.crt /usr/local/share/ca-certificates/
 RUN set -ex \
     && update-ca-certificates \
     && keytool -import -v -trustcacerts -alias server-alias -file /usr/local/share/ca-certificates/ca.crt -keystore cacerts.jks -keypass changeit -storepass changeit -noprompt
